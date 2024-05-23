@@ -29,7 +29,7 @@ class Crud extends Connection{
 
     public static function guardarDatos($data){
         try{
-            $sql = "INSERT INTO usuarios (id, nombre, correo) VALUES (:id, :nombre, :correo)";
+            $sql = "INSERT INTO usuarios (nombre, correo) VALUES (:nombre, :correo)";
             $stmt= Connection::getConexion()->prepare($sql);
             $stmt->bindParam(":nombre", $data['nombre']);
             $stmt->bindParam(":correo", $data['correo']);
